@@ -6,73 +6,45 @@ import {
   FaServer,
   FaJsSquare,
   FaGitAlt,
-} from "react-icons/fa"; // Import React, Node.js, MongoDB, Express.js, and JavaScript icons
+} from "react-icons/fa";
 import {
   TbBrandHtml5,
   TbBrandNextjs,
   TbBrandSass,
   TbBrandVscode,
-  TbHtml,
   TbSql,
 } from "react-icons/tb";
 import { VscGithubAlt } from "react-icons/vsc";
 
+//@ts-ignore
+const Skill = ({ IconComponent, color, skillName }) => (
+  <div className="skill">
+    <IconComponent className={`icon ${color}`} />
+    <span className="skill-name">{skillName}</span>
+  </div>
+);
+
 const SkillSection = () => (
-  <section className="my-8">
-    <div className="md:px-0 lg:px-12">
-      <h2 className="text-
-      3xl font-bold mb-4 text-white ">Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4">
-        <div className="bg-gray-900  p-4 rounded-lg flex items-center">
-          <FaReact className="text-blue-500 mr-2" />
-          <span className=" text-white">React</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <FaNodeJs className="text-green-500 mr-2" />
-          <span className=" text-white">Node.js</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <FaDatabase className="text-yellow-500 mr-2" />
-          <span className=" text-white">MongoDB</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <FaServer className="text-purple-500 mr-2" />
-          <span className=" text-white">Express.js</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <FaJsSquare className="text-yellow-500 mr-2" />
-          <span className=" text-white">JavaScript</span>
-        </div>
-
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <VscGithubAlt className="mr-2 text-white" />
-          <span className=" text-white">Github</span>
-        </div>
-
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <TbBrandVscode className="mr-2 text-blue-500" />
-          <span className=" text-white">Vscode</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <FaGitAlt className="mr-2 text-red-500" />
-          <span className=" text-white">Git</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <TbBrandNextjs className="mr-2 text-blue-500" />
-          <span className=" text-white">Nextjs</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <TbSql className="mr-2 text-orange-500" />
-          <span className=" text-white">Sql</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <TbBrandHtml5 className="mr-2 text-red-500" />
-          <span className=" text-white">Html</span>
-        </div>
-        <div className="bg-gray-900 p-4 rounded-lg flex items-center">
-          <TbBrandSass className="mr-2 text-pink-500" />
-          <span className=" text-white">Sass</span>
-        </div>
+  <section className="skill-section my-8 pt-3">
+    <div className="container">
+      <h2 className="section-title">Skills</h2>
+      <div className="skills-grid">
+        <Skill IconComponent={FaReact} color="blue" skillName="React" />
+        <Skill IconComponent={FaNodeJs} color="green" skillName="Node.js" />
+        <Skill IconComponent={FaDatabase} color="yellow" skillName="MongoDB" />
+        <Skill IconComponent={FaServer} color="purple" skillName="Express.js" />
+        <Skill
+          IconComponent={FaJsSquare}
+          color="yellow"
+          skillName="JavaScript"
+        />
+        <Skill IconComponent={VscGithubAlt} color="white" skillName="Github" />
+        <Skill IconComponent={TbBrandVscode} color="blue" skillName="VSCode" />
+        <Skill IconComponent={FaGitAlt} color="red" skillName="Git" />
+        <Skill IconComponent={TbBrandNextjs} color="blue" skillName="Next.js" />
+        <Skill IconComponent={TbSql} color="orange" skillName="SQL" />
+        <Skill IconComponent={TbBrandHtml5} color="red" skillName="HTML5" />
+        <Skill IconComponent={TbBrandSass} color="pink" skillName="Sass" />
       </div>
     </div>
   </section>

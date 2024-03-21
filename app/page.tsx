@@ -7,9 +7,9 @@ import ProjectsSection from "@/components/ProjectSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8">
-      <div className="flex flex-col items-center gap-8">
-        <div className="relative w-48 h-48 rounded-md overflow-hidden">
+    <main className="min-h-screen p-8 md:p-12 text-gray-100">
+      <div className="flex flex-col items-center gap-8 md:gap-10">
+        <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-xl">
           <Image
             src="/profile-pic.png"
             alt="Profile Picture"
@@ -17,15 +17,28 @@ export default function Home() {
             objectFit="cover"
           />
         </div>
-        <h1 className="text-4xl font-bold text-white">Harsh Yadav</h1>
-        <p className="text-lg  text-gray-400">Full Stack Developer</p>
+        <h1 className="text-5xl text-center font-extrabold text-white md:text-6xl">
+          Harsh Yadav
+        </h1>
+        <p className="text-xl text-gray-300 md:text-2xl mt-2 px-6 py-2 rounded-md bg-blue-500/20">
+          Full Stack Developer
+        </p>
+
         <SocialLinks />
       </div>
 
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      <section>
+        <AboutSection />
+      </section>
+      <section>
+        <SkillsSection />
+      </section>
+      <section>
+        <ProjectsSection />
+      </section>
+      <section>
+        <ContactSection />
+      </section>
     </main>
   );
 }
