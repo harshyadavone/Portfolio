@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8">
       <div className="flex flex-col items-center gap-8">
-        <div className="relative w-48 h-48 rounded-full overflow-hidden">
+        <div className="relative w-48 h-48 overflow-hidden">
           <Image
             src="/profile-pic.png"
             alt="Profile Picture"
