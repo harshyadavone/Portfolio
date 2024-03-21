@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col items-center gap-8">
         <div className="relative w-48 h-48 rounded-full overflow-hidden">
           <Image
-            src="/profile-picture.png"
+            src="/profile-pic.png"
             alt="Profile Picture"
             layout="fill"
             objectFit="cover"
