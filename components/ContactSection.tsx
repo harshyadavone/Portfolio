@@ -20,7 +20,7 @@ const ContactSection = () => {
               <span>harshdana1@gmail.com</span>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/harshyadavone/"
+              href="https://www.linkedin.com/in/harshdana"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
