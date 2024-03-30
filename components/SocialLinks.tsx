@@ -23,7 +23,7 @@ const SocialLinks = () => (
       <FaTwitter size={28} />
     </a>
     <a
-      href="https://linkedin.com/in/yourusername"
+      href="https://www.linkedin.com/in/harshdana"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="LinkedIn"
