@@ -42,7 +42,7 @@ const ProjectSection = () => (
         />
         <ProjectCard
           title="More coming soon"
-          description="i'm working on more projects...."
+          description="I am diligently working on my projects, which will be ready very soon"
           link="https://github.com/harshyadavone"
           colorClass="text-emerald-500"
         />
