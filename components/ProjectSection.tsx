@@ -37,13 +37,13 @@ const ProjectSection = () => (
         <ProjectCard
           title="Blog Website"
           description="This is a blog website built with Next.js and Markdown."
-          link="https://github.com/harshyadavone/blog"
+          link="https://github.com/harshyadavone/mern-blog-app"
           colorClass="text-blue-500"
         />
         <ProjectCard
-          title="E-commerce Store"
-          description="An e-commerce store built with React and Stripe for payments."
-          link="https://github.com/harshyadavone/store"
+          title="More coming soon"
+          description="i'm working on more projects...."
+          link="https://github.com/harshyadavone"
           colorClass="text-emerald-500"
         />
       </div>
