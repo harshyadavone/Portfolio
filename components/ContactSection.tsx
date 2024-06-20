@@ -3,9 +3,9 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <section className="my-12 md:my-16 lg:my-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#2a2626] rounded-lg shadow-md p-6 sm:p-8 md:p-12 lg:p-16">
+    <section className="my-12 md:ml-9 md:my-16 lg:my-20 max-w-[1200px]">
+      <div className="sm:px-6 lg:px-8">
+        <div className="bg-gray-900/10 rounded-lg p-6 sm:p-8 md:p-12 lg:p-16">
           <h2 className="text-3xl font-bold mb-4 text-white">Get in Touch</h2>
           <p className="text-gray-400 mb-6 sm:mb-8 text-lg">
             I'd love to hear from you! Feel free to reach out with any questions

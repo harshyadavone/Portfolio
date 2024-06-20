@@ -1,40 +1,39 @@
-import SocialLinks from "@/components/SocialLinks";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import Image from "next/image";
 import SkillsSection from "@/components/SkillSection";
 import ProjectsSection from "@/components/ProjectSection";
+import Profile from "@/components/Profile";
+import GitHubRepo from "@/components/GithubRepos";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 md:p-12 text-gray-100">
-      <div className="flex flex-col items-center gap-8 md:gap-10">
-        <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-xl overflow-hidden shadow-xl">
-          <Image
-            src="/profile-pic.png"
-            alt="Profile Picture"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-        <h1 className="text-5xl text-center font-extrabold text-white md:text-6xl">
-          Harsh Yadav
-        </h1>
-        <p className="text-xl text-gray-300 md:text-2xl mt-2 px-6 py-2 rounded-md bg-blue-500/20">
-          Full Stack Developer
-        </p>
-
-        <SocialLinks />
+    <main className="p-8 md:p-10 md:pt-20 text-gray-100">
+      <h1 className="decor absolute opacity-20 -mt-14 ml-50 pl-16 hidden md:inline-block">
+        ///
+      </h1>
+      <div className="relative flex flex-col md:flex-row items-center justify-evenly md:gap-10">
+        <Profile />
       </div>
-
       <section>
         <AboutSection />
       </section>
+      <section className="relative">
+        <h1 className="decor absolute opacity-20 right-0  mt-40 hidden md:inline-block">
+          SKills
+        </h1>
+        <div className="ml-auto mr-12">
+          <SkillsSection />
+        </div>
+      </section>
+
       <section>
-        <SkillsSection />
+        <h1 className="decor absolute opacity-20 -mt-14 ml-64 pl-16 hidden md:inline-block">
+          Projects
+        </h1>
+        <ProjectsSection />
       </section>
       <section>
-        <ProjectsSection />
+        <GitHubRepo />
       </section>
       <section>
         <ContactSection />

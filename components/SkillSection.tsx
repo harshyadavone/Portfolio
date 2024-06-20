@@ -1,53 +1,75 @@
 import React from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import {
-  FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaServer,
-  FaJsSquare,
-  FaGitAlt,
-} from "react-icons/fa";
-import {
-  TbBrandHtml5,
-  TbBrandNextjs,
-  TbBrandSass,
-  TbBrandVscode,
-  TbSql,
-} from "react-icons/tb";
-import { VscGithubAlt } from "react-icons/vsc";
+  databasesAndOrm,
+  librariesAndFrameworks,
+  mainStack,
+  otherTools,
+} from "@/utils/Data";
 
-//@ts-ignore
-const Skill = ({ IconComponent, color, skillName }) => (
-  <div className="skill">
-    <IconComponent className={`icon ${color}`} />
-    <span className="skill-name">{skillName}</span>
-  </div>
-);
+export interface TechItem {
+  name: string;
+  color: string;
+  description: string;
+  icon: React.ElementType;
+}
 
-const SkillSection = () => (
-  <section className="skill-section my-8 pt-3">
-    <div className="container">
-      <h2 className="section-title">Skills</h2>
-      <div className="skills-grid">
-        <Skill IconComponent={FaReact} color="blue" skillName="React" />
-        <Skill IconComponent={FaNodeJs} color="green" skillName="Node.js" />
-        <Skill IconComponent={FaDatabase} color="yellow" skillName="MongoDB" />
-        <Skill IconComponent={FaServer} color="purple" skillName="Express.js" />
-        <Skill
-          IconComponent={FaJsSquare}
-          color="yellow"
-          skillName="JavaScript"
-        />
-        <Skill IconComponent={VscGithubAlt} color="white" skillName="Github" />
-        <Skill IconComponent={TbBrandVscode} color="blue" skillName="VSCode" />
-        <Skill IconComponent={FaGitAlt} color="red" skillName="Git" />
-        <Skill IconComponent={TbBrandNextjs} color="blue" skillName="Next.js" />
-        <Skill IconComponent={TbSql} color="orange" skillName="SQL" />
-        <Skill IconComponent={TbBrandHtml5} color="red" skillName="HTML5" />
-        <Skill IconComponent={TbBrandSass} color="pink" skillName="Sass" />
-      </div>
+const SkillSection: React.FC = () => {
+  const renderTechItems = (items: TechItem[]) => (
+    <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-6">
+      {items.map((tech, index) => (
+        <Tooltip key={index}>
+          <TooltipTrigger asChild>
+            <button
+              type="button"
+              className={`flex items-center font-other gap-2 px-3 py-2 rounded-md  border-gray-500/20 hover:bg-gray-500/10 transition-colors duration-300 cursor-pointer`}
+            >
+              <div className={`w-4 h-4 `} style={{ color: tech.color }}>
+                <tech.icon />
+              </div>
+              {tech.name}
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <span>{tech.description}</span>
+          </TooltipContent>
+        </Tooltip>
+      ))}
     </div>
-  </section>
-);
+  );
+
+  return (
+    <section className="py-12 md:ml-16 text-white">
+      <h2 className="text-3xl font-bold mb-6 text-center">
+        Technologies and Tools
+      </h2>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col gap-6">
+          <div>
+            <h3 className="text-xl font-other mb-2 ">Main Stack</h3>
+            {renderTechItems(mainStack)}
+          </div>
+
+          <div>
+            <h3 className="text-xl font-other mb-2">
+              Libraries and Frameworks
+            </h3>
+            {renderTechItems(librariesAndFrameworks)}
+          </div>
+
+          <div>
+            <h3 className="text-xl  mb-2">Databases and ORM</h3>
+            {renderTechItems(databasesAndOrm)}
+          </div>
+
+          <div>
+            <h3 className="text-xl  mb-2">Other Tools</h3>
+            {renderTechItems(otherTools)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default SkillSection;
