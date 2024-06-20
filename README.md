@@ -1,6 +1,6 @@
-# Harsh Dana's Portfolio
+# Portfolio
 
-Welcome to Harsh Dana's portfolio website. This site showcases my work, skills, and professional experience in the field of web development.
+Welcome to my portfolio website. This site showcases my work and skills in the field of web development.
 
 ## Features
 
