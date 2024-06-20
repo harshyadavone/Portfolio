@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -31,9 +32,10 @@ export default function RootLayout({
         className={`${inter.className} ${poppins.className} bg-neutral-950 text-white min-h-screen flex flex-col`}
       >
         <main className="flex-grow">
-        <TooltipProvider>
-          <CustomCursor />
-          {children}
+          <TooltipProvider>
+            <CustomCursor />
+            {children}
+            <Analytics />
           </TooltipProvider>
         </main>
         <footer className="bg-gray-900/40 py-4 text-center">
