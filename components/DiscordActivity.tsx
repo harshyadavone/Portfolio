@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const DiscordActivity = () => {
@@ -16,7 +17,7 @@ const DiscordActivity = () => {
           "https://api.lanyard.rest/v1/users/889586166221926410"
         );
         const data = await response.json();
-
+  
         if (data.success) {
           setDiscordStatus(data.data.discord_status);
           setUserId(data.data.discord_user.id);
@@ -31,15 +32,16 @@ const DiscordActivity = () => {
         setLoading(false);
       }
     };
-
+  
     fetchDiscordStatus();
-
+  
     const intervalId = setInterval(fetchDiscordStatus, 60000);
-
+  
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [setDiscordStatus, setUserId, setAvatarId, setUsername, setLoading]);
+  
 
   const currentTime = new Date();
 
@@ -81,7 +83,9 @@ const DiscordActivity = () => {
               imageLoaded ? "opacity-0" : "opacity-100"
             }`}
           />
-          <img
+          <Image
+          width={70}
+          height={70}
             src={`https://cdn.discordapp.com/avatars/${userId}/${avatarId}.png`}
             alt="Discord Profile"
             className={`w-20 h-20 rounded-full transition-opacity duration-500 ${

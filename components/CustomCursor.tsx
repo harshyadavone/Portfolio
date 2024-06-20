@@ -1,6 +1,5 @@
 'use client'
-// components/CustomCursor.tsx
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -8,7 +7,7 @@ const CustomCursor = () => {
   const previousTimeRef = useRef<number>();
   const mousePosition = useRef({ x: 0, y: 0 });
 
-  const animate = (time: number) => {
+  const animate = useCallback((time: number) => {
     if (previousTimeRef.current != undefined) {
       const deltaTime = time - previousTimeRef.current;
 
@@ -20,7 +19,7 @@ const CustomCursor = () => {
     }
     previousTimeRef.current = time;
     requestRef.current = requestAnimationFrame(animate);
-  };
+  }, []);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -34,7 +33,7 @@ const CustomCursor = () => {
       document.removeEventListener('mousemove', moveCursor);
       cancelAnimationFrame(requestRef.current!);
     };
-  }, []);
+  }, [animate]);
 
   return (
     <div

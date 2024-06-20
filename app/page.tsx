@@ -8,6 +8,7 @@ import GitHubRepo from "@/components/GithubRepos";
 export default function Home() {
   return (
     <main className="p-8 md:p-10 md:pt-20 text-gray-100">
+      {/* Main title decor */}
       <h1 className="decor absolute opacity-20 -mt-14 ml-50 pl-16 hidden md:inline-block">
         ///
       </h1>
@@ -18,7 +19,8 @@ export default function Home() {
         <AboutSection />
       </section>
       <section className="relative">
-        <h1 className="decor absolute opacity-20 right-0  mt-40 hidden md:inline-block">
+        {/* Skills title decor */}
+        <h1 className="decor absolute opacity-20 right-0 mt-40 hidden md:inline-block">
           SKills
         </h1>
         <div className="ml-auto mr-12">
@@ -27,6 +29,7 @@ export default function Home() {
       </section>
 
       <section>
+        {/* Projects title decor */}
         <h1 className="decor absolute opacity-20 -mt-14 ml-64 pl-16 hidden md:inline-block">
           Projects
         </h1>
