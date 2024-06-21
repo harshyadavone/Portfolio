@@ -39,11 +39,11 @@ const SkillSection: React.FC = () => {
   );
 
   return (
-    <section className="py-12 md:ml-16 text-white">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+    <section className="py-8 md:py-12 md:ml-16 text-white">
+      <h2 className="font-other text-left text-2xl md:text-3xl font-bold mb-6 ">
         Technologies and Tools
       </h2>
-      <div className="container mx-auto px-4">
+      <div className="">
         <div className="flex flex-col gap-6">
           <div>
             <h3 className="text-xl font-other mb-2 ">Main Stack</h3>

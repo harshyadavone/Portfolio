@@ -79,7 +79,7 @@ const GitHubRepo: React.FC = () => {
           <h2 className="text-2xl md:pl-10 font-other mb-4">
             My GitHub Repositories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mx-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:mx-10">
             {[...Array(perPage)].map((_, index) => (
               <LoadingSkeleton key={index} />
             ))}
@@ -99,7 +99,7 @@ const GitHubRepo: React.FC = () => {
         <h2 className="text-2xl md:pl-10 font-other mb-4">
           My GitHub Repositories
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mx-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:mx-10">
           {repos.map((repo) => (
             <div
               className="card flex flex-col rounded-md border bg-gray-800/20 border-gray-500/20 w-full p-3"

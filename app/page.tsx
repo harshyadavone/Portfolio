@@ -8,11 +8,10 @@ import GitHubRepo from "@/components/GithubRepos";
 export default function Home() {
   return (
     <main className="p-8 md:p-10 md:pt-20 text-gray-100">
-    
-      <h1 className="decor absolute opacity-20 -mt-14 ml-50 pl-16 hidden md:inline-block">
+      <h1 className="decor absolute opacity-20 -mt-14 ml-50 pl-16 ">
         {"///"}
       </h1>
-      <div className="relative flex flex-col md:flex-row items-center justify-evenly md:gap-10">
+      <div className="relative flex flex-col md:flex-row items-start md:items-center justify-evenly md:gap-10">
         <Profile />
       </div>
       <section>

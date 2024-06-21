@@ -7,9 +7,9 @@ const DiscordActivity = () => {
   const [userId, setUserId] = useState<string>("");
   const [avatarId, setAvatarId] = useState<string>("");
   const [username, setUsername] = useState<string>("");
-  const [imageLoaded, setImageLoaded] = useState(false); 
-  const [loading, setLoading] = useState(true); 
-  
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchDiscordStatus = async () => {
       try {
@@ -17,7 +17,7 @@ const DiscordActivity = () => {
           "https://api.lanyard.rest/v1/users/889586166221926410"
         );
         const data = await response.json();
-  
+
         if (data.success) {
           setDiscordStatus(data.data.discord_status);
           setUserId(data.data.discord_user.id);
@@ -32,16 +32,15 @@ const DiscordActivity = () => {
         setLoading(false);
       }
     };
-  
+
     fetchDiscordStatus();
-  
+
     const intervalId = setInterval(fetchDiscordStatus, 60000);
-  
+
     return () => {
       clearInterval(intervalId);
     };
   }, [setDiscordStatus, setUserId, setAvatarId, setUsername, setLoading]);
-  
 
   const currentTime = new Date();
 
@@ -72,11 +71,11 @@ const DiscordActivity = () => {
     );
   }
   return (
-    <div className="flex flex-col md:ml-10 items-center justify-center text-center max-w-md">
+    <div className="flex flex-col md:ml-10 items-start md:items-center justify-center text-center max-w-md">
       <h2 className="text-2xl md:text-4xl font-bold mb-4 flex items-center font-other gap-2">
         Activity <span className="text-blue-500 font-other">: Discord</span>
       </h2>
-      <div className="flex items-center p-3 rounded-lg gap-4 mb-8">
+      <div className="flex items-start md:items-center pt-3 md:p-3 rounded-lg gap-4 mb-8">
         <div className="relative">
           <div
             className={`absolute inset-0 animate-pulse w-20 h-20 bg-gray-700/10 rounded-full ${
@@ -84,11 +83,11 @@ const DiscordActivity = () => {
             }`}
           />
           <Image
-          width={70}
-          height={70}
+            width={70}
+            height={70}
             src={`https://cdn.discordapp.com/avatars/${userId}/${avatarId}.png`}
             alt="Discord Profile"
-            className={`w-20 h-20 rounded-full transition-opacity duration-500 ${
+            className={`w-20 h-20 rounded-md transition-opacity duration-500 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}
             onLoad={handleImageLoad}
