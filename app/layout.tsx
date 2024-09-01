@@ -28,6 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    <meta name="google-site-verification" content="twhv-FtvhTmMu8DrAZbHTaCKsoXamB_xxt-KjZVGEFU" />
       <body
         className={`${inter.className} ${poppins.className} bg-neutral-950 text-white min-h-screen flex flex-col`}
       >
